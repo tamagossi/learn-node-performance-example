@@ -9,7 +9,7 @@ function delay(duration) {
 }
 
 app.get('/', (_, res) => {
-	res.send('Performance example');
+	res.send(`Performance example ${process.pid}`);
 });
 
 app.get('/timer', (req, res) => {
@@ -18,5 +18,5 @@ app.get('/timer', (req, res) => {
 });
 
 app.listen(8000, () => {
-	console.log('App running and listening to PORT 3000');
+	console.log(`App running with worker ${process.pid} and listening to PORT 8000`);
 });
